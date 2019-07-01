@@ -55,12 +55,10 @@ import React from 'react'
 //
 // }
 class Users extends React.Component {
-        constructor(props) {
-                super(props)
-                this.state = {
-                        filtered: [],
-                }
-        }
+
+    state = {
+        filtered: [],
+    }
 
 
         componentDidMount() {
@@ -127,34 +125,34 @@ class Users extends React.Component {
 
 
 
- <ul>
+                         <ul>
 
 
 
-                    {this.state.filtered.map((user)=>{
+                                            {this.state.filtered.map((user)=>{
 
-                        const active = user.userName === this.props.currentUser ? 'active' : '';
-                        return(
+                                                const active = user.userName === this.props.currentUser ? 'active' : '';
+                                                return(
 
-                            <li key={user.userId}>
-
-
+                                                    <li key={user.userId}>
 
 
-                    <a
-                                    onClick={() => this.props.postAsUser(user.userName)}
-                                    href="#!">
-                        <div className={active + " avatar-circle " }>
-                            <span className="initials">{user.userName}</span>
-                        </div>
 
 
-                    </a>
+                                            <a
+                                                            onClick={() => this.props.postAsUser(user.userName)}
+                                                            href="#!">
+                                                <div className={active + " avatar-circle " }>
+                                                    <span className="initials">{user.userName}</span>
+                                                </div>
 
-                            </li>
-                        )
-                    })}
- </ul>
+
+                                            </a>
+
+                                                    </li>
+                                                )
+                                            })}
+                         </ul>
 
 
 
