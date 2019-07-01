@@ -1,0 +1,341 @@
+
+
+:root {
+  --main-color: #5ea3d0;
+  --secondary-color: white;
+  --main-text-color: #3e5869;
+  --secondary-text-color: #b0c7d6;
+  --post-message-form: #F5F5F5;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+  font-weight: 200;
+  color: 	var(--main-text-color);
+}
+
+#root {
+  height: 100%;
+}
+
+.app {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 60px 1fr 1fr 1fr 1fr 60px;
+  grid-template-areas:
+          "l m m m m r"
+          "l m m m m r"
+          "l m m m m r"
+          "l m m m m r"
+          "l m m m m r"
+          "u f f f f n";
+}
+
+.new-thread-form {
+  grid-area: n;
+}
+
+.threads {
+  grid-area: r;
+}
+.new-user-form {
+  grid-area: u;
+}
+
+.users {
+  grid-area: l;
+}
+.search-user-form {
+  grid-area: s;
+}
+.messages {
+  grid-area: m;
+}
+
+.post-message-form {
+  grid-area: f;
+}
+
+/* REST OF CSS */
+.threads {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: var(--main-color);
+  /*overflow: scroll;*/
+  height: 100%;
+}
+
+.threads ul {
+  list-style-type: none;
+  padding: 0;
+  /*overflow: scroll;*/
+}
+
+.threads li {
+  margin: 10px 0;
+}
+
+.threads h3 {
+  margin: 5px 0;
+  color: var(--secondary-color);
+}
+
+.threads .thread a {
+  color: var(--secondary-text-color);
+  font-weight: 600;
+  text-decoration: none;
+
+}
+
+.threads .thread.active a {
+  color: var(--secondary-color);
+}
+
+.new-thread-form {
+  padding: 0 5px;
+  background: var(--secondary-color);
+  color: var(--main-text-color);
+}
+
+.new-thread-form form {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-thread-form input {
+  width: 135px;
+  background: var(--secondary-color);
+}
+
+.new-thread-form button {
+  background: var(--secondary-color);
+  color: var(--main-text-color);
+  border: 0;
+}
+
+.new-thread-form input::placeholder {
+  color: var(--main-text-color);
+  font-weight: 200;
+}
+
+.new-thread-form input:focus {
+  outline-width: 0;
+}
+
+.new-thread-form input {
+  border: 0;
+}
+
+.new-thread-form button {
+  border: 0;
+}
+
+.message {
+  margin: 15px 0;
+}
+
+.message .message-username {
+  font-size: 11px;
+  color: var(--main-text-color);
+  opacity: 0.9;
+  margin-bottom: 6px;
+}
+.message .message-text {
+  background: var(--main-color);
+  color: var(--secondary-color);
+  display: inline;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.messages {
+  box-sizing: border-box;
+  padding-left: 6px;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background: var(--secondary-color);
+}
+
+.messages .join-discussion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 34px;
+  font-weight: 300;
+}
+.messages h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  font-weight: 300;
+}
+
+.post-message-form {
+  background: var(--post-message-form);
+  display: flex;
+}
+
+.post-message-form input {
+  width: 100%;
+  padding: 15px 10px;
+  margin: 0;
+  border-style: none;
+  background: var(--post-message-form);
+  font-weight: 200;
+
+}
+
+.post-message-form input:focus {
+  outline-width: 0;
+}
+
+.post-message-form input::placeholder {
+  color: var(--main-text-color);
+}
+
+.help-text {
+  position: absolute;
+  top: 10px;
+}
+
+.users  {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: var(--main-color);
+  /*overflow: scroll;*/
+  height: 100%;
+}
+.users  a{
+  text-decoration: none;
+}
+.users ul {
+  list-style-type: none;
+  padding: 0;
+  /*overflow: scroll;*/
+}
+
+.users li {
+  margin: 10px 0;
+}
+
+.users h3 {
+  margin: 5px 0;
+  color: var(--secondary-color);
+}
+
+/*.users .user a {*/
+  /*color: var(--secondary-text-color);*/
+  /*font-weight: 600;*/
+  /*text-decoration: none;*/
+
+/*}*/
+.avatar-circle.active {
+
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+}
+.avatar-circle {
+  width: 60px;
+  height: 60px;
+  background-color: var(--secondary-text-color);
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  color: var(--secondary-color);
+}
+.initials {
+  position: relative;
+  top: 20px; /* 25% of parent */
+  font-size: 10px; /* 50% of parent */
+  line-height: 10px; /* 50% of parent */
+  text-decoration: none;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+/*.users .user.active a {*/
+  /*color: var(--secondary-color);*/
+  /*text-decoration: none;*/
+/*}*/
+
+.new-user-form {
+  padding: 0 5px;
+  background: var(--secondary-color);
+  color: var(--main-text-color);
+}
+
+.new-user-form form {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-user-form input {
+  width: 135px;
+  background: var(--secondary-color);
+}
+
+.new-user-form button {
+  background: var(--secondary-color);
+  color: var(--main-text-color);
+  border: 0;
+}
+
+.new-user-form input::placeholder {
+  color: var(--main-text-color);
+  font-weight: 200;
+}
+
+.new-user-form input:focus {
+  outline-width: 0;
+}
+
+.new-user-form input {
+  border: 0;
+}
+
+.new-user-form button {
+  border: 0;
+}
+
+
+.search-user-form {
+  padding: 5px 5px;
+  background: var(--post-message-form);
+  color: var(--main-text-color);
+}
+
+.search-user-form form {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-user-form input {
+  width: 135px;
+  background: var(--post-message-form);
+}
+
+.search-user-form input::placeholder {
+  color: var(--main-text-color);
+  font-weight: 200;
+}
+
+.search-user-form input:focus {
+  outline-width: 0;
+}
+
+.search-user-form input {
+  border: 0;
+}
